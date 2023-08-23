@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DashboardController!
+{% endblock %}
+
+{% block body %}
+	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<h1>Bienvenidos al Dashboard
+			{{ app.user.email }}
+		</h1>
+	{% endif %}
+	<a href="{{path('app_logout')}}">
+		Sair
+	</a>
+{% endblock %}
